@@ -26,7 +26,6 @@ class App extends Component {
 
 
   createProfile(props) {
-    // trackEvent()
     alert(api_key)
     alert(secret_code)
     this.setState({firstName: '', email: '', id: ''})
