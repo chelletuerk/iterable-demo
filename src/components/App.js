@@ -39,9 +39,9 @@ class App extends Component {
     /////CREATE PROFILE POST REQUEST
     const myHeaders = new Headers();
     let id = Math.random().toString(16).slice(2)
-    myHeaders.append("API_KEY", api_key);
-    myHeaders.append("Content-Type", "application/json");
-    myHeaders.append("Cookie", "XSRF-TOKEN=ed48f338cb3ffdafd90a60dc4cb459194ebed825-1654666467237-b45da4c5d930d385a89ca38a");
+    myHeaders.append("API_KEY", api_key)
+    myHeaders.append("Content-Type", "application/json")
+    myHeaders.append("Cookie", "XSRF-TOKEN=ed48f338cb3ffdafd90a60dc4cb459194ebed825-1654666467237-b45da4c5d930d385a89ca38a")
 
     const data = JSON.stringify({
       "email": this.state.email,
@@ -152,7 +152,7 @@ class App extends Component {
       // console.log(JSON.stringify(response.data.inAppMessages))
     })
     .catch(function (error) {
-    console.log(error)
+      alert(error)
     })
   }
 
