@@ -17,6 +17,7 @@ class App extends Component {
     }
     this.createProfile = this.createProfile.bind(this)
     this.createEvent = this.createEvent.bind(this)
+    this.getMessages = this.getMessages.bind(this)
     this.handleFirstNameInput = this.handleFirstNameInput.bind(this)
     this.handleEmailInput = this.handleEmailInput.bind(this)
   }
@@ -125,6 +126,37 @@ class App extends Component {
     })
   }
 
+  getMessages(e) {
+    var axios = require('axios');
+    var data = JSON.stringify({
+    "email": "michelletuerk@gmail.com",
+    "dataFields": {
+        "firstName": "Chelle",
+        "isWebUser": true,
+        "SA_WebUser_Test_Key": "completed"
+    },
+    "userId": "22"
+    });
+
+    var config = {
+    method: 'get',
+    url: 'https://api.iterable.com/api/inApp/getMessages?email=michelletuerk@gmail.com&userId=michelletuerk@gmail.com&API_KEY=349dcc9373c74c6699c5d1204a271695&count=5',
+    headers: {
+        'API_KEY': '349dcc9373c74c6699c5d1204a271695',
+        'Content-Type': 'application/json'
+    },
+    data : data
+    };
+
+    axios(config)
+    .then(function (response) {
+    console.log(JSON.stringify(response.data))
+    })
+    .catch(function (error) {
+    console.log(error)
+    })
+  }
+
   render() {
     return (
       <div className='App'>
@@ -150,6 +182,12 @@ class App extends Component {
           className='createEvent'
           text='Create Event'
           handleClick={this.createEvent}
+          buttonDisabled={this.buttonDisabled}
+        />
+        <Button
+          className='getMessages'
+          text='Get Messages'
+          handleClick={this.getMessages}
           buttonDisabled={this.buttonDisabled}
         />
        <h2>{this.state.firstName}</h2>
