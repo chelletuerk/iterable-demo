@@ -83,7 +83,6 @@ class App extends Component {
         }
       }
     })
-    this.renderProfile(this.state.email)
     console.log(this.state.email)
     this.setState({firstName: '', email: ''})
     return this.state.email
@@ -119,7 +118,7 @@ class App extends Component {
     axios(config)
     .then(function (response) {
       // alert(JSON.stringify(response.data))
-      alert(JSON.stringify(response.data.code) + '  Event id:' + JSON.stringify(response.data.params.id))
+      alert(JSON.stringify(response.data.code) + ' Event id: ' + JSON.stringify(response.data.params.id))
     })
     .catch(function (error) {
       alert(error)
