@@ -2,6 +2,7 @@
 import React, { Component} from 'react';
 import Button from './Button'
 import Input from './Input'
+import Iframe from './Iframe'
 import '../Styles.css';
 const api_key = process.env.REACT_APP_API_KEY
 const secret_code = process.env.REACT_APP_SECRET_CODE
@@ -188,6 +189,7 @@ class App extends Component {
           handleClick={this.getMessages}
           buttonDisabled={this.buttonDisabled}
         />
+        <Iframe />
        <h2>{this.state.firstName}</h2>
        <h2>{this.state.email}</h2>
       </div>
