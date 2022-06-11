@@ -130,6 +130,7 @@ class App extends Component {
           buttonDisabled={this.buttonDisabled}
         />
        <h2>{this.state.firstName}</h2>
+       <h2>{this.state.email}</h2>
       </div>
     )
   }
