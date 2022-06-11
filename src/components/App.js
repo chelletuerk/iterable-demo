@@ -70,8 +70,6 @@ class App extends Component {
       let responseCode = response.data
       if (responseCode.code === "Success") {
         alert(JSON.stringify(responseCode.code))
-      //   userList.append(`You've successfully created a profile for ${email}.`)
-      //     document.querySelector('input#email-input').style.backgroundColor = "#fff"
       }
     })
 
@@ -79,8 +77,6 @@ class App extends Component {
       if( error.response ){
         if(error.response.data.code === "InvalidEmailAddressError") {
           alert(JSON.stringify(error.response.data.code))
-        //   document.querySelector('input#email-input').style.backgroundColor = "#fac090"
-        //   userList.append(html.text)
         }
       }
     })
@@ -118,7 +114,6 @@ class App extends Component {
 
     axios(config)
     .then(function (response) {
-      // alert(JSON.stringify(response.data))
       alert(JSON.stringify(response.data.code) + ' Event id: ' + JSON.stringify(response.data.params.id))
     })
     .catch(function (error) {
@@ -126,6 +121,8 @@ class App extends Component {
     })
   }
 
+  //////////////////////////////////AXIOS CALL
+  /////CREATE PROFILE POST REQUEST
   getMessages(e) {
     var axios = require('axios');
     var data = JSON.stringify({
