@@ -147,7 +147,8 @@ class App extends Component {
 
     axios(config)
     .then(function (response) {
-    console.log(JSON.stringify(response.data))
+      response.data.inAppMessages.map((e) => console.log(e.content.html))
+      // console.log(JSON.stringify(response.data.inAppMessages))
     })
     .catch(function (error) {
     console.log(error)
