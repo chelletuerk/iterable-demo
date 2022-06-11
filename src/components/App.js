@@ -34,7 +34,8 @@ class App extends Component {
   //////////////////////////////////AXIOS CALLS
   /////POST REQUEST
   const myHeaders = new Headers();
-  myHeaders.append("API_KEY", "349dcc9373c74c6699c5d1204a271695");
+  let id = Math.random().toString(16).slice(2)
+  myHeaders.append("API_KEY", api_key);
   myHeaders.append("Content-Type", "application/json");
   myHeaders.append("Cookie", "XSRF-TOKEN=ed48f338cb3ffdafd90a60dc4cb459194ebed825-1654666467237-b45da4c5d930d385a89ca38a");
 
@@ -45,14 +46,14 @@ class App extends Component {
       "isWebUser": true,
       "SA_WebUser_Test_Key": "completed"
     },
-    "userId": '43',
+    "userId": id,
     })
 
   let config = {
     method: 'post',
     url: 'https://api.iterable.com/api/users/update',
     headers: {
-      'API_KEY': '349dcc9373c74c6699c5d1204a271695',
+      'API_KEY': api_key,
       'Content-Type': 'application/json',
       'Cookie': 'XSRF-TOKEN=ed48f338cb3ffdafd90a60dc4cb459194ebed825-1654666467237-b45da4c5d930d385a89ca38a'
     },
@@ -65,7 +66,7 @@ class App extends Component {
   let responseCode = response.data
   console.log(JSON.stringify(response.data))
     if (responseCode.code === "Success") {
-      alert('success')
+      alert(JSON.stringify(responseCode.code))
     //   userList.append(`You've successfully created a profile for ${firstName}.`)
     //     document.querySelector('input#email-input').style.backgroundColor = "#fff"
     }
@@ -73,11 +74,11 @@ class App extends Component {
 
   .catch((error) => {
       if( error.response ){
-        alert(JSON.stringify(error.response.data))
-          // if(error.response.data.code === "InvalidEmailAddressError") {
+          if(error.response.data.code === "InvalidEmailAddressError") {
+            alert(JSON.stringify(error.response.data.code))
           //   document.querySelector('input#email-input').style.backgroundColor = "#fac090"
           //   userList.append(html.text)
-          // }
+          }
       }
   })
 
