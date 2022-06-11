@@ -1,4 +1,42 @@
 html {
   background-color: teal;
 }
-  
+
+h3{
+  font-family: 'Poiret One', monaco;
+  font-weight: bold;
+  font-size: 35px;
+  color: #cb5c54;
+  margin-left: 10px;
+  margin-top: 5px;
+  text-shadow: 1px 1px #cc7e94;
+  }
+
+input {
+  border: solid indianred 3px;
+  border-radius: 10px;
+  height: 30px;
+  width: 250px;
+  margin: 0px 5px;
+  padding-left: 10px;
+}
+
+button {
+  height: 35px;
+  border: solid #ac463f 3px;
+  background-color: #ac463f;
+  border-radius: 7px;
+  font-family: 'Poiret One', monaco;
+  font-size: 15px;
+  color: lavender;
+  margin-left: 8px;
+  margin-top: 8px;
+  cursor: pointer;
+}
+
+::placeholder {
+  color: #ac463f;
+  font-family: 'Poiret One', monaco;
+  font-size: 15px;
+  padding-left: 10px;
+}

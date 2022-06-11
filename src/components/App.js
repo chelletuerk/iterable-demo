@@ -6,25 +6,28 @@ import '../Styles.css';
 const api_key = process.env.REACT_APP_API_KEY
 const secret_code = process.env.REACT_APP_SECRET_CODE
 const axios = require('axios').default;
-console.log(api_key)
-console.log(secret_code)
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
       firstName: '',
-      setFirstName: '',
       email: '',
       id: '',
     }
     this.createProfile = this.createProfile.bind(this)
-    this.handleInput = this.handleInput.bind(this)
+    this.handleFirstNameInput = this.handleFirstNameInput.bind(this)
+    this.handleEmailInput = this.handleEmailInput.bind(this)
   }
 
-  handleInput(e) {
+  handleFirstNameInput(e) {
     let firstName = e.target.value
     this.setState({ firstName: firstName })
+  }
+
+  handleEmailInput(e) {
+    let email = e.target.value
+    this.setState({ email: email })
   }
 
   createProfile(e) {
@@ -40,9 +43,9 @@ class App extends Component {
   myHeaders.append("Cookie", "XSRF-TOKEN=ed48f338cb3ffdafd90a60dc4cb459194ebed825-1654666467237-b45da4c5d930d385a89ca38a");
 
   const data = JSON.stringify({
-    "email": this.state.firstName,
+    "email": this.state.email,
     "dataFields": {
-      "firstName": 'Chelle43',
+      "firstName": this.state.firstName,
       "isWebUser": true,
       "SA_WebUser_Test_Key": "completed"
     },
@@ -67,7 +70,7 @@ class App extends Component {
   console.log(JSON.stringify(response.data))
     if (responseCode.code === "Success") {
       alert(JSON.stringify(responseCode.code))
-    //   userList.append(`You've successfully created a profile for ${firstName}.`)
+    //   userList.append(`You've successfully created a profile for ${email}.`)
     //     document.querySelector('input#email-input').style.backgroundColor = "#fff"
     }
   })
@@ -82,10 +85,10 @@ class App extends Component {
       }
   })
 
-    this.renderProfile(this.state.firstName)
-    console.log(this.state.firstName)
-    this.setState({firstName: ''})
-    return this.state.firstName
+    this.renderProfile(this.state.email)
+    console.log(this.state.email)
+    this.setState({firstName: '', email: ''})
+    return this.state.email
   }
 
   // handleKeyPress(e) {
@@ -110,7 +113,13 @@ class App extends Component {
       <div className='App'>
         <Input
           value={this.state.firstName}
-          handleInput={this.handleInput}
+          handleInput={this.handleFirstNameInput}
+          placeholder='First Name'
+          onKeyPress={(e) => e.key === 'Enter' && this.createProfile()}
+        />
+        <Input
+          value={this.state.email}
+          handleInput={this.handleEmailInput}
           placeholder='Email Address'
           onKeyPress={(e) => e.key === 'Enter' && this.createProfile()}
         />
@@ -121,11 +130,10 @@ class App extends Component {
           buttonDisabled={this.buttonDisabled}
         />
        <h2>{this.state.firstName}</h2>
+       <h2>{this.state.email}</h2>
       </div>
     )
   }
-
-
 }
 
 export default App
