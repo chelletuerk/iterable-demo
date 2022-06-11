@@ -140,7 +140,7 @@ class App extends Component {
 
     var config = {
     method: 'get',
-    url: 'https://api.iterable.com/api/inApp/getMessages?email=michelletuerk@gmail.com&userId=michelletuerk@gmail.com&API_KEY=349dcc9373c74c6699c5d1204a271695&count=5',
+    url: `{https://api.iterable.com/api/inApp/getMessages?email=michelletuerk@gmail.com&userId=michelletuerk@gmail.com&API_KEY=${api_key}&count=5}`,
     headers: {
         'API_KEY': api_key,
         'Content-Type': 'application/json'
