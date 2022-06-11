@@ -236,7 +236,7 @@ const rawHTML = `
 </div>
 `
 
-const Iframe = () => {
+const HTMLembed = () => {
   return (
     <div style={container}>
       {Parser().parse(rawHTML)}
@@ -244,7 +244,7 @@ const Iframe = () => {
   )
 }
 
-export default Iframe
+export default HTMLembed
 
 // Styling
 const container = {

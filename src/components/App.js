@@ -2,7 +2,7 @@
 import React, { Component} from 'react';
 import Button from './Button'
 import Input from './Input'
-import Iframe from './Iframe'
+import HTMLembed from './HTMLembed'
 import '../Styles.css';
 const api_key = process.env.REACT_APP_API_KEY
 const secret_code = process.env.REACT_APP_SECRET_CODE
@@ -66,8 +66,6 @@ class App extends Component {
     axios(config)
 
     .then(function (response) {
-      console.log('RESPONSE', response)
-      console.log(JSON.stringify(response.data))
       let responseCode = response.data
       if (responseCode.code === "Success") {
         alert(JSON.stringify(responseCode.code))
@@ -81,7 +79,6 @@ class App extends Component {
         }
       }
     })
-    console.log(this.state.email)
     this.setState({firstName: '', email: ''})
     return this.state.email
   }
@@ -148,8 +145,7 @@ class App extends Component {
 
     axios(config)
     .then(function (response) {
-      response.data.inAppMessages.map((e) => console.log(e.content.html))
-      // console.log(JSON.stringify(response.data.inAppMessages))
+      response.data.inAppMessages.map((e) => alert(e.content.html))
     })
     .catch(function (error) {
       alert(error)
@@ -189,9 +185,9 @@ class App extends Component {
           handleClick={this.getMessages}
           buttonDisabled={this.buttonDisabled}
         />
-        <Iframe />
-       <h2>{this.state.firstName}</h2>
-       <h2>{this.state.email}</h2>
+        <HTMLembed />
+       // <h2>{this.state.firstName}</h2>
+       // <h2>{this.state.email}</h2>
       </div>
     )
   }
