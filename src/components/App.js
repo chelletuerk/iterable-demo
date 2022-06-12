@@ -34,7 +34,7 @@ class App extends Component {
 
   createProfile(e) {
     e.preventDefault()
-    //////////////////////////////////AXIOS CALL
+
     /////CREATE PROFILE POST REQUEST
     const myHeaders = new Headers()
     let id = Math.random().toString(16).slice(2)
@@ -64,7 +64,7 @@ class App extends Component {
       }
     axios(config)
 
-    .then(function (response) {
+    .then((response) => {
       let responseCode = response.data
       if (responseCode.code === 'Success') {
         alert(JSON.stringify(responseCode.code))
@@ -85,7 +85,7 @@ class App extends Component {
   createEvent(e) {
     let id = Math.random().toString(16).slice(2)
     e.preventDefault()
-    //////////////////////////////////AXIOS CALL
+
     /////CREATE PROFILE POST REQUEST
     const data = JSON.stringify({
       'email': 'michelletuerk4@gmail.com',
@@ -97,7 +97,7 @@ class App extends Component {
         'secret_code_key': secret_code
       },
       'userId': id
-    });
+    })
 
     let config = {
       method: 'post',
@@ -107,21 +107,21 @@ class App extends Component {
         'Content-Type': 'application/json'
       },
       data : data
-    };
+    }
 
     axios(config)
-    .then(function (response) {
-      alert(JSON.stringify(response.data.code) + ' Event id: ' + JSON.stringify(response.data.params.id))
+    .then((response) => {
+      alert(JSON.stringify(response.data.code)
+      + ' Event id: ' + JSON.stringify(response.data.params.id))
     })
-    .catch(function (error) {
+    .catch((error) => {
       alert(error)
     })
   }
 
-  //////////////////////////////////AXIOS CALL
-  /////CREATE PROFILE POST REQUEST
+  /////GET HTML REQUEST
   getMessages(e) {
-    var axios = require('axios');
+    var axios = require('axios')
     var data = JSON.stringify({
     'email': 'michelletuerk@gmail.com',
     'dataFields': {
@@ -140,13 +140,21 @@ class App extends Component {
         'Content-Type': 'application/json'
     },
     data : data
-    };
+    }
 
     axios(config)
-    .then(function (response) {
-      response.data.inAppMessages.map((e) => alert(e.content.html))
+    .then((response) => {
+      console.log(response)
+      response.data.inAppMessages.map((e) => console.log(e.content.html))
     })
-    .catch(function (error) {
+    //Not yet working///
+    // .then((response) => {
+    //   if (response.data.inAppMessages === []) {
+    //     alert('hit')
+    //     alert('You have no unread messages')
+    //   }
+    // })
+    .catch((error) => {
       alert(error)
     })
   }
