@@ -4,12 +4,11 @@ This small React.js app utilizes the Iterable API to create a new profile in the
 
 A static HTML page from the inApp Messages ```GET``` request is displayed using npm ```html-to-react```.
 
-[Link to non-functional but responsive production version](https://iterable-demo-chelletuerk.vercel.app/)
-
 [Link to Github Repository](https://github.com/chelletuerk/iterable-demo)
 
-![](https://iili.io/h1PdfS.png)
+[Link to non-functional but responsive production version](https://iterable-demo-chelletuerk.vercel.app/)
 
+![](https://iili.io/h1PdfS.png)
 
 Install dependencies:
 
