@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Advent+Pro:wght@100&family=BhuTuka+Expanded+One&family=Gruppo&display=swap');
+
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('./images/background-img.png') no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  z-index: -999;
+}
+
+input {
+  border: solid darkgray 3px;
+  border-radius: 10px;
+  height: 44px;
+  width: 270px;
+  margin: 0px 30px;
+  padding-left: 5px;
+  font-family: 'Advent Pro', sans-serif;
+  font-family: 'BhuTuka Expanded One', cursive;
+  font-family: 'Gruppo', cursive;
+  font-size: 20px;
+}
+
+input[type="text"]
+{
+    font-size:30px;
+}
+
+.first-name {
+  margin-left: 30px;
+}
+
+.email {
+  margin-left: 6px;
+}
+
+button {
+  height: 45px;
+  border: solid lightgray 3px;
+  background-color: lightgray;
+  border-radius: 7px;
+  margin-bottom: 50px;
+  font-family: 'Advent Pro', sans-serif;
+  font-family: 'BhuTuka Expanded One', cursive;
+  font-family: 'Gruppo', cursive;
+  font-size: 20px;
+  margin-left: 32px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+/* HTML component CSS override */
+table, td, tr {
+  border: none;
+  background-color: #0000 !important;
+}
+
+p {
+  color: white;
+  font-size: 15px !important;
+  font-weight: 900;
+  font-family: 'Advent Pro', sans-serif !important;
+  font-family: 'BhuTuka Expanded One', cursive important;
+  font-family: 'Gruppo', cursive important;
+}
+
+.nl-container {
+  width: 10%!important;
+  border: solid white 1px;
+  border-padding: 10px;
+}
+
+.clean-body {
+  background-color: #0000 !important;
+  position: absolute;
+  left: 75%;
+  bottom: 10px;
+}
+
+.button-container a {
+  color: #3e3838 !important;
+  background-color: lightgray !important;
+  border-color: lightgray!important;
+  font-family: 'Advent Pro', sans-serif !important;
+  font-family: 'BhuTuka Expanded One', cursive important;
+  font-weight: bold !important;
+  font-family: 'Gruppo', cursive;  height: 28px !important;
+  padding-bottom: 8px !important;
+}
+
+img {
+  margin-top: -5px;
+}
+/*/////////////////////////////////////*/
+
+
+.form-container {
+  position: absolute;
+  top: 350px;
+  margin-left: 23px;
+}
+
+.events-messages-container {
+  position: absolute;;
+  bottom: -283px;
+}
+
+::placeholder {
+  color: #3e3838;
+  font-family: 'Advent Pro', sans-serif;
+  font-family: 'BhuTuka Expanded One', cursive;
+  font-family: 'Gruppo', cursive;  font-size: 20px;
+  padding-left: 10px;
+}
+
+@media screen and (max-width: 930px) {
+  .clean-body {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 695px) {
+  .email {
+    margin-left: 30px;
+    margin-top: 15px;
+  }
+
+  .events-messages-container {
+    bottom: -216px;
+  }
+
+  input {
+    width: 420px;
+  }
+}
+
+@media screen and (max-width: 525px) {
+  input {
+    width: 315px;
+   }
+ }
