@@ -10,7 +10,6 @@ A static HTML page from the inApp Messages ```GET``` request is displayed using 
 
 ![](https://iili.io/h1PdfS.png)
 
-
 Install dependencies:
 
 ```npm install```
