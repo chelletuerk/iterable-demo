@@ -20,4 +20,4 @@ Fire up server:
 
 Once server is running you can visit:
 
-* `http://localhost:3000/` to run application
+`http://localhost:3000/` to run application
