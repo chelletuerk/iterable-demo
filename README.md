@@ -7,6 +7,7 @@ A static HTML page from the inApp Messages ```GET``` request is displayed using 
 [Link to Github Repository](https://github.com/chelletuerk/iterable-demo)
 
 [Link to non-functional but responsive production version](https://iterable-demo-chelletuerk.vercel.app/)
+
 ![](./src/components/assets/images/readme-image.png)
 
 Install dependencies:
